@@ -82,7 +82,8 @@ c=c+100;
                 textArea.setOnKeyPressed(this::processkeyevent);
             }
 else if(keyCode.equals(KeyCode.QUOTE)){
-                System.out.println("sa");
+                System.out.println("Y");
+                        
 savecurrentbuffer();
             }
         }
