@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="buisness_layer.implementation">
+    <children>
+        <MenuBar prefHeight="30.0" prefWidth="146.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Open" />
+                        <MenuItem mnemonicParsing="false" text="Split Open" />
+                        <MenuItem mnemonicParsing="false" text="New" />
+                        <MenuItem mnemonicParsing="false" text="Close" />
+                        <MenuItem mnemonicParsing="false" text="Save" />
+                        <MenuItem mnemonicParsing="false" text="Save As..." />
+                        <MenuItem mnemonicParsing="false" text=" Split Diff With..." />
+                        <MenuItem mnemonicParsing="false" text="Split Patched By" />
+                        <MenuItem mnemonicParsing="false" text="Print " />
+                        <MenuItem mnemonicParsing="false" text="Save-Exit" />
+                        <MenuItem mnemonicParsing="false" text="Exit" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Undo" />
+                        <MenuItem mnemonicParsing="false" text="Redo" />
+                        <MenuItem mnemonicParsing="false" text="Repeat" />
+                        <MenuItem mnemonicParsing="false" onAction="#cut" onMenuValidation="#cut" text="Cut" />
+                        <MenuItem mnemonicParsing="false" onAction="#copy" onMenuValidation="#copy" text="Copy" />
+                        <MenuItem mnemonicParsing="false" onAction="#P" onMenuValidation="#P" text="Paste" />
+                        <MenuItem mnemonicParsing="false" text="Put Before" />
+                        <MenuItem mnemonicParsing="false" text="Put After" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" text="Select all" />
+                        <MenuItem mnemonicParsing="false" text="Find..." />
+                        <MenuItem mnemonicParsing="false" text="Find and Replace..." />
+                        <MenuItem mnemonicParsing="false" text="Setting windows" />
+                        <MenuItem mnemonicParsing="false" text="Startup Settings" />
+                        <Menu mnemonicParsing="false" text="Global Settings">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Toggle Pattern Highlight" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Ignoring Case" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Showing Matched Pairs" />
+                                <Menu mnemonicParsing="false" text="Context Lines">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="1" />
+                                        <MenuItem mnemonicParsing="false" text="2" />
+                                        <MenuItem mnemonicParsing="false" text="3" />
+                                        <MenuItem mnemonicParsing="false" text="4" />
+                                        <MenuItem mnemonicParsing="false" text="5" />
+                                        <MenuItem mnemonicParsing="false" text="7" />
+                                        <MenuItem mnemonicParsing="false" text="10" />
+                                        <MenuItem mnemonicParsing="false" text="100" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Virtual Edit">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="Never" />
+                                        <MenuItem mnemonicParsing="false" text="Block Section" />
+                                        <MenuItem mnemonicParsing="false" text="Insert mode" />
+                                        <MenuItem mnemonicParsing="false" text="Unspecified Action" />
+                                        <MenuItem mnemonicParsing="false" text="Block And insert" />
+                                        <MenuItem mnemonicParsing="false" text="Always" />
+                                    </items>
+                                </Menu>
+                                <MenuItem mnemonicParsing="false" text="Toggle insert mode" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Vi compatibility" />
+                                <MenuItem mnemonicParsing="false" text="Search Path..." />
+                                <MenuItem mnemonicParsing="false" text="Tag Files" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Tool Bar" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Bottom Scroll Bar" />
+                                <MenuItem mnemonicParsing="false" text="Toggle left scroll bar" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Right Scroll Bar" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Find Settings">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Toggle Line Numbering" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Relative Line Numbering" />
+                                <MenuItem mnemonicParsing="false" text="Toggle List Mode" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Line Wrapping" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Wrapping at Word" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Tab Expanding" />
+                                <MenuItem mnemonicParsing="false" text="Toggle Auto Indexing" />
+                                <MenuItem mnemonicParsing="false" text="Toggle C-Style Indexing" />
+                                <Menu mnemonicParsing="false" text="Shift Width">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="2" />
+                                        <MenuItem mnemonicParsing="false" text="3" />
+                                        <MenuItem mnemonicParsing="false" text="4" />
+                                        <MenuItem mnemonicParsing="false" text="5" />
+                                        <MenuItem mnemonicParsing="false" text="6" />
+                                        <MenuItem mnemonicParsing="false" text="8" />
+                                    </items>
+                                </Menu>
+                                <Menu mnemonicParsing="false" text="Soft Tabstop">
+                                    <items>
+                                        <MenuItem mnemonicParsing="false" text="2" />
+                                        <MenuItem mnemonicParsing="false" text="3" />
+                                        <MenuItem mnemonicParsing="false" text="4" />
+                                        <MenuItem mnemonicParsing="false" text="5" />
+                                        <MenuItem mnemonicParsing="false" text="6" />
+                                        <MenuItem mnemonicParsing="false" text="8" />
+                                    </items>
+                                </Menu>
+                                <MenuItem mnemonicParsing="false" text="Text Width..." />
+                                <MenuItem mnemonicParsing="false" text="File Format..." />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Color Scheme">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="blue" />
+                                <MenuItem mnemonicParsing="false" text="darkblue" />
+                                <MenuItem mnemonicParsing="false" text="default" />
+                                <MenuItem mnemonicParsing="false" text="delek" />
+                                <MenuItem mnemonicParsing="false" text="desert" />
+                                <MenuItem mnemonicParsing="false" text="elflord" />
+                                <MenuItem mnemonicParsing="false" text="evening" />
+                                <MenuItem mnemonicParsing="false" text="industry" />
+                                <MenuItem mnemonicParsing="false" text="koehler" />
+                                <MenuItem mnemonicParsing="false" text="morning" />
+                                <MenuItem mnemonicParsing="false" text="murphy" />
+                                <MenuItem mnemonicParsing="false" text="pablo" />
+                                <MenuItem mnemonicParsing="false" text="peachpuff" />
+                                <MenuItem mnemonicParsing="false" text="ron" />
+                                <MenuItem mnemonicParsing="false" text="shine" />
+                                <MenuItem mnemonicParsing="false" text="slate" />
+                                <MenuItem mnemonicParsing="false" text="torte" />
+                                <MenuItem mnemonicParsing="false" text="zellner" />
+                            </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Keymap">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="None" />
+                                <MenuItem mnemonicParsing="false" text="accents" />
+                                <MenuItem mnemonicParsing="false" text="arabic" />
+                                <MenuItem mnemonicParsing="false" text="amenian-eastern" />
+                                <MenuItem mnemonicParsing="false" text="amenian-western" />
+                                <MenuItem mnemonicParsing="false" text="belarusian-jcuken" />
+                                <MenuItem mnemonicParsing="false" text="belarusian-bds" />
+                                <MenuItem mnemonicParsing="false" text="bulgarian-phonetic" />
+                                <MenuItem mnemonicParsing="false" text="canfr-win" />
+                                <MenuItem mnemonicParsing="false" text="croation" />
+                                <MenuItem mnemonicParsing="false" text="czech" />
+                                <MenuItem mnemonicParsing="false" text="dvorak" />
+                                <MenuItem mnemonicParsing="false" text="esperanto" />
+                                <MenuItem mnemonicParsing="false" text="french-azerty" />
+                                <MenuItem mnemonicParsing="false" text="germana-qwertz" />
+                                <MenuItem mnemonicParsing="false" text="greek" />
+                                <MenuItem mnemonicParsing="false" text="hebrewp" />
+                                <MenuItem mnemonicParsing="false" text="kana" />
+                                <MenuItem mnemonicParsing="false" text="kazakh-jcuken" />
+                                <MenuItem mnemonicParsing="false" text="korean-dubeolisk" />
+                                <MenuItem mnemonicParsing="false" text="korean" />
+                                <MenuItem mnemonicParsing="false" text="lithuanian-baltic" />
+                            </items>
+                        </Menu>
+                        <MenuItem mnemonicParsing="false" text="Select Font" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Tools">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Jump To This Tag g^]" />
+                        <MenuItem mnemonicParsing="false" text="Jump Back           ^T" />
+                        <MenuItem mnemonicParsing="false" text="Build Tags File" />
+                        <MenuItem mnemonicParsing="false" text="Spelling" />
+                        <MenuItem mnemonicParsing="false" text="Folding" />
+                        <MenuItem mnemonicParsing="false" text="Diff" />
+                        <MenuItem mnemonicParsing="false" text="Make" />
+                        <MenuItem mnemonicParsing="false" text="List Errors" />
+                        <MenuItem mnemonicParsing="false" text="List Mesages" />
+                        <MenuItem mnemonicParsing="false" text="Next Error" />
+                        <MenuItem mnemonicParsing="false" text="Previous Error" />
+                        <MenuItem mnemonicParsing="false" text="Older list " />
+                        <MenuItem mnemonicParsing="false" text="Newer List " />
+                        <MenuItem mnemonicParsing="false" text="Error Window" />
+                        <MenuItem mnemonicParsing="false" text="Set Compiler" />
+                        <MenuItem mnemonicParsing="false" text="Convert to HEX" />
+                        <MenuItem mnemonicParsing="false" text="Convert Back" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Syntax">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Show File Types in Menu" />
+                        <MenuItem mnemonicParsing="false" text="Off" />
+                        <MenuItem mnemonicParsing="false" text="Manual" />
+                        <MenuItem mnemonicParsing="false" text="Automatic" />
+                        <MenuItem mnemonicParsing="false" text="On/off for this file" />
+                        <MenuItem mnemonicParsing="false" text="color test" />
+                        <MenuItem mnemonicParsing="false" text="Highlight Test" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Buffer">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Refresh menu" />
+                        <MenuItem mnemonicParsing="false" text="Delete" />
+                        <MenuItem mnemonicParsing="false" text="Alternate" />
+                        <MenuItem mnemonicParsing="false" text="Next " />
+                        <MenuItem mnemonicParsing="false" text="Previous" />
+                        <MenuItem mnemonicParsing="false" text="[No Name]" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Window">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                    <items>
+                        <MenuItem mnemonicParsing="false" text="Action 1" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+      <TextArea fx:id="textArea" layoutY="30.0" onKeyPressed="#processkeyevent" prefHeight="500.0" prefWidth="1000.0" />
+    </children>
+</AnchorPane>
