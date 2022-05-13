@@ -32,6 +32,7 @@ public class implementation implements buisnessinter {
         // System.out.println("Type: " + type + " Code: " + keyCode);
         //textArea.setText("text");
         if (keyCode.equals(KeyCode.Y)) {
+
             textArea.setOnKeyPressed(this::anothery);
             //        int caret = textArea.getCaretPosition();
             //      int lineStart = caret;
@@ -52,6 +53,12 @@ c=c+100;
             textArea.setOnKeyPressed(this::paste);
             textArea.setOnKeyPressed(this::processkeyevent);
         }
+        else if(keyCode.equals(keyCode.UP)){
+            int c=textArea.getCaretPosition();
+            System.out.println(c);
+            textArea.selectPositionCaret(100);
+
+        }
         //copyToClipboard(textArea.getSelectedText().trim());
         else if (keyCode.equals(keyCode.I)) {
             textArea.setEditable(true);
@@ -60,8 +67,10 @@ c=c+100;
             textArea.setOnKeyPressed(this::processkeyevent);
         }
         if (keyCode.equals(keyCode.ESCAPE)) {
+            
             textArea.setEditable(false);
             if (keyCode.equals(KeyCode.Y)) {
+
                 textArea.setOnKeyPressed(this::anothery);
                 //        int caret = textArea.getCaretPosition();
                 //      int lineStart = caret;
@@ -71,6 +80,7 @@ c=c+100;
                 //textArea.selectRange(lineStart,lineEnd);
 
             } else if (keyCode.equals(KeyCode.D)) {
+
                 textArea.setOnKeyPressed(this::anotherd);
            /*     int caret = textArea.getCaretPosition();
                 int lineStart = caret;
@@ -82,8 +92,7 @@ c=c+100;
                 textArea.setOnKeyPressed(this::processkeyevent);
             }
 else if(keyCode.equals(KeyCode.QUOTE)){
-                System.out.println("Y");
-                        
+
 savecurrentbuffer();
             }
         }
@@ -91,6 +100,7 @@ savecurrentbuffer();
             savecurrentbuffer();
         }
         if (keyCode.equals(KeyCode.D)) {
+
             textArea.setOnKeyPressed(this::anotherd);
             /*int caret = textArea.getCaretPosition();
             int lineStart = caret;
