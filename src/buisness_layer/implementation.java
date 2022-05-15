@@ -1,5 +1,5 @@
 package buisness_layer;
-
+import java.sql.Connection;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
@@ -196,6 +196,9 @@ String filePath="C:/Users/Abdulrehman/Desktop/aa.txt";
         ex.printStackTrace();
     }
 }
+    public void Savefile(ActionEvent actionEvent) {
+saveTheFile();
+    }
     public void saveTheFile(){
         saveFileOptionWindow = new JPanel(new GridLayout(2,1));
         fileLabel = new JLabel("Filename      :- ");
@@ -221,5 +224,7 @@ String filePath="C:/Users/Abdulrehman/Desktop/aa.txt";
             ex.printStackTrace();
         }
     }
+
+
 }
 
