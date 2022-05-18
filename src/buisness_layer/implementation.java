@@ -1,21 +1,27 @@
 package buisness_layer;
+import java.io.IOException;
 import java.sql.Connection;
+import Database.DB;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.TextArea;
 import javafx.scene.input.Clipboard;
 import javafx.scene.input.ClipboardContent;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
-
+import javafx.stage.Stage;
+import javafx.scene.control.Button;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 
-public class implementation implements buisnessinter {
-
+public class implementation implements buisnessinter{
+Button btn1;
     static String newline = "\n";
     JFrame f;
     static int newlineLength = newline.length();
@@ -56,7 +62,7 @@ c=c+100;
         else if(keyCode.equals(keyCode.UP)){
             int c=textArea.getCaretPosition();
             System.out.println(c);
-            textArea.selectPositionCaret(100);
+            textArea.positionCaret(textArea.getCaretPosition()+1);
 
         }
         //copyToClipboard(textArea.getSelectedText().trim());
@@ -111,7 +117,7 @@ savecurrentbuffer();
             textArea.deleteText(textArea.getSelection());
             textArea.setOnKeyPressed(this::processkeyevent);*/
         } else if (keyCode.equals(keyCode.SEMICOLON)) {
-            saveTheFile();
+            //saveTheFile();
         }
 
     }
@@ -196,10 +202,15 @@ String filePath="C:/Users/Abdulrehman/Desktop/aa.txt";
         ex.printStackTrace();
     }
 }
-    public void Savefile(ActionEvent actionEvent) {
+    public void Savefile(ActionEvent actionEvent) throws IOException {
+        System.out.println("wow");
 saveTheFile();
+
+        DB obj = new DB();
+        obj.Savetodatabase(fileName,dirName);
+
     }
-    public void saveTheFile(){
+    public void saveTheFile() throws IOException {
         saveFileOptionWindow = new JPanel(new GridLayout(2,1));
         fileLabel = new JLabel("Filename      :- ");
         dirLabel = new JLabel("Save File To :- ");
@@ -223,8 +234,18 @@ saveTheFile();
         }catch (Exception ex){
             ex.printStackTrace();
         }
+        DB obj=new DB();
+        obj.Savetodatabase(fileName,dirName);
     }
 
+    private void Movetodatabase() throws IOException {
+        System.out.println("Move");
+        Parent root = FXMLLoader.load(getClass().getResource("database.fxml"));
+        Stage window= (Stage) btn1.getScene().getWindow();
+        window.setScene(new Scene(root,500,500));
+window.setTitle("Database");
 
+
+    }
 }
 
