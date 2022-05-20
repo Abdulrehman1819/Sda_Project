@@ -13,4 +13,5 @@ public interface uiinterface {
     public void P(ActionEvent event);
     @FXML
     public void copy(ActionEvent event);
+    public void Openfile(ActionEvent actionEvent);
 }

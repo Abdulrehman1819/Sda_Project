@@ -1,0 +1,13 @@
+<component name="ArtifactManager">
+  <artifact name="my:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/my_jar</output-path>
+    <root id="root">
+      <element id="archive" name="my.jar">
+        <element id="module-output" name="my" />
+      </element>
+      <element id="file-copy" path="G:/mysql-connector-java-8.0.29/mysql-connector-java-8.0.29.jar" />
+      <element id="library" level="project" name="lib" />
+      <element id="library" level="project" name="javafx-sdk-18" />
+    </root>
+  </artifact>
+</component>

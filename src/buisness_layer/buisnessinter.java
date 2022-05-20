@@ -13,4 +13,5 @@ public interface buisnessinter extends uiinterface{
     public void P(ActionEvent event);
     @FXML
     public void copy(ActionEvent event);
+    public void Openfile(ActionEvent actionEvent);
 }

@@ -1,5 +1,5 @@
 package buisness_layer;
-import java.io.IOException;
+import java.io.*;
 import java.sql.Connection;
 import Database.DB;
 import javafx.event.ActionEvent;
@@ -14,13 +14,13 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import sample.uiinterface;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.KeyListener;
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 
-public class implementation implements buisnessinter{
+public class implementation implements buisnessinter,uiinterface {
 Button btn1;
     static String newline = "\n";
     JFrame f;
@@ -122,18 +122,18 @@ savecurrentbuffer();
 
     }
 
-
-    @FXML
+@Override
+  //  @FXML
     public void P(ActionEvent event) {
         textArea.paste();
     }
-
-    @FXML
+@Override
+   // @FXML
     public void copy(ActionEvent event) {
         textArea.copy();
     }
-
-    @FXML
+@Override
+   // @FXML
     public void cut(ActionEvent event) {
         textArea.cut();
     }
@@ -246,6 +246,34 @@ saveTheFile();
 window.setTitle("Database");
 
 
+    }
+@Override
+    public void Openfile(ActionEvent actionEvent) {
+    JFileChooser chooseFile = new JFileChooser();
+    int i = chooseFile.showOpenDialog(null);
+    if (i == JFileChooser.APPROVE_OPTION){
+        File file = chooseFile.getSelectedFile(); //select the file
+        String filePath = file.getPath(); //get the file path
+
+        String fileNameToShow = file.getName(); //get the file name
+      File  f1=chooseFile.getSelectedFile();
+
+     //   f.setTitle(fileNameToShow);
+
+        try {
+            BufferedReader readFile = new BufferedReader(new FileReader(filePath));
+            String tempString1 = "";
+            String tempString2 = "";
+
+            while ((tempString1 = readFile.readLine()) != null)
+                tempString2 += tempString1 + "\n";
+
+            textArea.setText(tempString2);
+            readFile.close();
+        }catch (Exception ae){
+            ae.printStackTrace();
+        }
+    }
     }
 }
 
