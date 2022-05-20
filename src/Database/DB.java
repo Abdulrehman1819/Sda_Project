@@ -25,8 +25,13 @@ Connection connect=dBconnnection.getDatabase();
 
         try {
 
+            String fn=filename.getText();
+String dirname=location.getText();
+Statement   stm=connect.createStatement();
+pst=connect.prepareStatement("Insert into filedata values(?,?)");
 
-
+            
+        
 //String sql="Insert into filedata values(?,?)";
 pst.setString(1,fn);
 pst.setString(2,dirname);
