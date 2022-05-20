@@ -9,14 +9,15 @@ public class DBconnnection {
     public Connection getDatabase() {
         String dbname = "db";
         String dbuser = "root";
-        String newuser = "root2";
         String dbpass = "123456789";
         String url = "jdbc:mysql://localhost/" + dbname;
 
         try{
             Class.forName("com.mysql.cj.jdbc.Driver");
-            database = DriverManager.getConnection(url,dbuser,dbpass); // database connection
-        } catch (ClassNotFoundException e) {
+            database = DriverManager.getConnection(url,dbuser,dbpass); // database connection here
+        }
+        catch (ClassNotFoundException e)
+        {
             e.printStackTrace();
         } catch (SQLException e) {
             e.printStackTrace();
